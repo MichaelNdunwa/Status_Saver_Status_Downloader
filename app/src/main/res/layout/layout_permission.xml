@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/image_holder"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/background_transparent_green_circle"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_caution"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_holder"
+        android:id="@+id/info_holder"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primaryTextColor"
+            android:fontFamily="@font/nunito_bold"
+            android:textStyle="bold"
+            android:text="@string/permission_required" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="16sp"
+            android:text="Status saver needs Storage Permission to work." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_marginTop="8dp"
+            android:text="* On next screen please tap on\n* USE THIS FOLDER\n* to give Storage Permission" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_holder"
+        android:text="Allow Permission"
+        android:textStyle="bold"
+        android:textColor="@color/primaryTextColor"
+        app:cornerRadius="10dp"
+        android:id="@+id/allow_permission"
+        android:fontFamily="@font/nunito_bold"
+        android:layout_margin="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

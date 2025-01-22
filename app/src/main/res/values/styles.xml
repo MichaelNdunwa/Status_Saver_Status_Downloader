@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryVariant">@color/green</item>
+        <!-- Tertiary color. -->
+        <item name="colorTertiary">@color/green_light</item>
+        <!-- Accent color. -->
+        <item name="colorAccent">@color/green_light</item>
+        <!-- Font family. -->
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <!-- Light Theme -->
+    <style name="LightTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryVariant">@color/green</item>
+        <!-- Tertiary color. -->
+        <item name="colorTertiary">@color/green_light</item>
+        <!-- Accent color. -->
+        <item name="colorAccent">@color/green_light</item>
+        <!-- Font family. -->
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <!-- Dark Theme -->
+    <style name="DarkTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="colorOnPrimary">#000000</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryVariant">@color/green</item>
+        <!-- Tertiary color. -->
+        <item name="colorTertiary">@color/green_light</item>
+        <!-- Accent color. -->
+        <item name="colorAccent">@color/green_light</item>
+        <!-- Font family. -->
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <!-- Title Style -->
+    <style name="TitleStyle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Bottom Navigation Item Style -->
+    <style name="BottomNavStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@color/green_light</item>
+    </style>
+
+</resources>

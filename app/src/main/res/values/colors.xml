@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#25d366</color>
+    <color name="green_light">#D14DE050</color>
+
+    <color name="gray">#FF808080</color>
+    <color name="grey">#80000000</color>
+
+    <!-- Text Color -->
+    <color name="primaryTextColor">@color/black</color>
+    <color name="secondaryTextColor">@color/grey</color>
+
+    <!-- Icon Color -->
+    <color name="iconTint">@color/grey</color>
+
+    <!--- Switch Track Color -->
+    <color name="switchTrackColor">@color/grey</color>
+
+    <!-- Background Color -->
+    <color name="background">@color/white</color>
+</resources>

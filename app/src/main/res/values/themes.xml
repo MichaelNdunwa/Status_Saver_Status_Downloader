@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.StatusSaverStatusDownloader" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryVariant">@color/green</item>
+        <!-- Tertiary color. -->
+        <item name="colorTertiary">@color/green_light</item>
+        <!-- Accent color. -->
+        <item name="colorAccent">@color/green_light</item>
+
+        <!-- Font family. -->
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <style name="Theme.StatusSaverStatusDownloader" parent="Base.Theme.StatusSaverStatusDownloader" />
+</resources>

@@ -9,6 +9,7 @@ import com.michael.statussaverstatusdownloader.R
 fun Activity.loadFragment(fragment: Fragment) {
     val fragmentActivity: FragmentActivity = this as FragmentActivity
     fragmentActivity.supportFragmentManager.beginTransaction().apply {
+        setReorderingAllowed(true)
         setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         replace(R.id.frame_layout, fragment)
         addToBackStack(null)

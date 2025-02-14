@@ -6,20 +6,18 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.michael.statussaverstatusdownloader.R
 import com.michael.statussaverstatusdownloader.databinding.ActivityMainBinding
 import com.michael.statussaverstatusdownloader.utils.Constants
-import com.michael.statussaverstatusdownloader.utils.Constants.getAllPathUri
 import com.michael.statussaverstatusdownloader.utils.FolderPermissionHandler
 import com.michael.statussaverstatusdownloader.utils.SharedPrefKeys
 import com.michael.statussaverstatusdownloader.utils.SharedPreferenceUtils
 import com.michael.statussaverstatusdownloader.utils.ThemeUtils
 import com.michael.statussaverstatusdownloader.utils.loadFragment
-import com.michael.statussaverstatusdownloader.view.fragments.DownloadedFragment
+import com.michael.statussaverstatusdownloader.view.fragments.SavedFragment
 import com.michael.statussaverstatusdownloader.view.fragments.WBusinessFragment
 import com.michael.statussaverstatusdownloader.view.fragments.WhatsappFragment
 
@@ -119,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                         loadFragment(WBusinessFragment())
                     }
                     R.id.downloaded -> {
-                        loadFragment(DownloadedFragment())
+                        loadFragment(SavedFragment())
                         }
                 }
                 return@setOnItemSelectedListener true

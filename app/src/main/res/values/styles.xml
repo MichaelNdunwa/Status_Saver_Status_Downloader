@@ -62,4 +62,9 @@
         <item name="itemActiveIndicatorStyle">@color/green_light</item>
     </style>
 
+<!--    <style name="TabTextAppearance" parent="TextAppearance.Material3.BodyMedium">-->
+<!--        <item name="android:fontFamily">@font/nunito_regular</item>-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--    </style>-->
+
 </resources>

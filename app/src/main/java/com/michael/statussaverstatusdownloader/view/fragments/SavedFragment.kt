@@ -9,42 +9,38 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
 import com.michael.statussaverstatusdownloader.R
-import com.michael.statussaverstatusdownloader.databinding.FragmentWBusinessBinding
-import com.michael.statussaverstatusdownloader.databinding.FragmentWhatsappBinding
-import com.michael.statussaverstatusdownloader.model.repository.WBusinessStatusRepository
-import com.michael.statussaverstatusdownloader.model.repository.WhatsappStatusRepository
+import com.michael.statussaverstatusdownloader.databinding.FragmentSavedBinding
+import com.michael.statussaverstatusdownloader.model.repository.SavedStatusRepository
 import com.michael.statussaverstatusdownloader.utils.Constants
 import com.michael.statussaverstatusdownloader.view.adapters.MediaViewPagerAdapter
-import com.michael.statussaverstatusdownloader.viewmodel.WBusinessStatusViewModel
-import com.michael.statussaverstatusdownloader.viewmodel.WhatsappStatusViewModel
-import com.michael.statussaverstatusdownloader.viewmodel.factories.WBusinessStatusViewModelFactory
-import com.michael.statussaverstatusdownloader.viewmodel.factories.WhatsappStatusViewModelFactory
+import com.michael.statussaverstatusdownloader.viewmodel.SavedStatusViewModel
+import com.michael.statussaverstatusdownloader.viewmodel.factories.SavedStatusViewModelFactory
 
 
-class WBusinessFragment : Fragment() {
+class SavedFragment : Fragment() {
 
-    private var _binding: FragmentWBusinessBinding? = null
+    private var _binding: FragmentSavedBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var viewModel: WBusinessStatusViewModel
+    lateinit var viewModel: SavedStatusViewModel
     private val viewPagerTitles = arrayListOf("Images", "Videos", "Audios")
-    val TAG = "WhatsappFragment"
+    val TAG = "SavedFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentWBusinessBinding.inflate(inflater, container, false)
+        _binding = FragmentSavedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            val repository = WBusinessStatusRepository(requireActivity())
+            val repository = SavedStatusRepository(requireActivity())
             viewModel = ViewModelProvider(
-                requireActivity(), WBusinessStatusViewModelFactory(repository)
-            )[WBusinessStatusViewModel::class.java]
+                requireActivity(), SavedStatusViewModelFactory(repository)
+            )[SavedStatusViewModel::class.java]
 
             // Set up swipe-to-refresh color
             swipeRefreshLayout.setColorSchemeResources(R.color.green_light)
@@ -57,9 +53,9 @@ class WBusinessFragment : Fragment() {
             // Set up ViewPager and TabLayout
             val viewPagerAdapter = MediaViewPagerAdapter(
                 fragmentActivity = requireActivity(),
-                imagesType = Constants.MEDIA_TYPE_W_BUSINESS_STATUS_IMAGES,
-                videosType = Constants.MEDIA_TYPE_W_BUSINESS_STATUS_VIDEOS,
-                audiosType = Constants.MEDIA_TYPE_W_BUSINESS_STATUS_AUDIOS
+                imagesType = Constants.MEDIA_TYPE_SAVED_STATUS_IMAGES,
+                videosType = Constants.MEDIA_TYPE_SAVED_STATUS_VIDEOS,
+                audiosType = Constants.MEDIA_TYPE_SAVED_STATUS_AUDIOS
             )
             statusViewPager.adapter = viewPagerAdapter
             TabLayoutMediator(tabLayout, statusViewPager) { tab, position ->
@@ -68,14 +64,14 @@ class WBusinessFragment : Fragment() {
 
             // Set up swipe-to-refresh
             binding.swipeRefreshLayout.setOnRefreshListener {
-                refreshWBusinessStatus()
+                refreshSavedStatus()
             }
         }
     }
 
-    fun refreshWBusinessStatus() {
+    fun refreshSavedStatus() {
         Toast.makeText(activity, "Refreshing Whatsapp Business Status", Toast.LENGTH_SHORT).show()
-        viewModel.getWBusinessStatus() // Pass viewLifecycleOwner here as well
+        viewModel.getSavedStatus() // Pass viewLifecycleOwner here as well
 
     }
 

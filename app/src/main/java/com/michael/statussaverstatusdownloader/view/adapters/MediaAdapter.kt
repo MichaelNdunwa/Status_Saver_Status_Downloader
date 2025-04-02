@@ -14,6 +14,7 @@ import com.michael.statussaverstatusdownloader.R
 import com.michael.statussaverstatusdownloader.databinding.ItemMediaBinding
 import com.michael.statussaverstatusdownloader.model.models.MediaModel
 import com.michael.statussaverstatusdownloader.utils.Constants
+import com.michael.statussaverstatusdownloader.utils.Constants.MEDIA_TYPE_AUDIO
 import com.michael.statussaverstatusdownloader.utils.Constants.MEDIA_TYPE_IMAGE
 import com.michael.statussaverstatusdownloader.utils.Constants.MEDIA_TYPE_VIDEO
 import com.michael.statussaverstatusdownloader.utils.isStatusExist
@@ -57,32 +58,63 @@ class MediaAdapter(private var list: ArrayList<MediaModel>, val context: Context
                 // set click listener for status card:
                 statusCard.setOnClickListener {
                     Log.d(TAG, "bind: Clicked on ${medialModel.fileName}")
-                    if (medialModel.fileType == MEDIA_TYPE_IMAGE) {
-                        // go to image viewer; ImageViewerActivity
-                        Intent().apply {
-//                            putExtra(Constants.MEDIA_LIST_KEY, list)
-                            putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
-                            putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
-                            setClass(context, ImageViewerActivity::class.java)
-                            context.startActivity(this)
-                        }
-                    } else if (medialModel.fileType == MEDIA_TYPE_VIDEO) {
-                        // go to video and audio player activity
-                        Intent().apply {
-//                            putExtra(Constants.MEDIA_LIST_KEY, list)
-                            putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
-                            putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
-                            setClass(context, VideoPlayerActivity::class.java)
-                            context.startActivity(this)
-                        }
-                    } else {
-                        Intent().apply {
-//                            putExtra(Constants.MEDIA_LIST_KEY, list)
-                            putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
-                            putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
-                            setClass(context, AudioPlayerActivity::class.java)
-                            context.startActivity(this)
-                        }
+                    /*            if (medialModel.fileType == MEDIA_TYPE_IMAGE) {
+                            // go to image viewer; ImageViewerActivity
+                                Intent().apply {
+        //                            putExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
+                                    setClass(context, ImageViewerActivity::class.java)
+                                    context.startActivity(this)
+                                }
+                            } else if (medialModel.fileType == MEDIA_TYPE_VIDEO) {
+                                // go to video and audio player activity
+                                Intent().apply {
+        //                            putExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
+                                    setClass(context, VideoPlayerActivity::class.java)
+                                    context.startActivity(this)
+                                }
+                            } else {
+                                Intent().apply {
+        //                            putExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
+                                    setClass(context, AudioPlayerActivity::class.java)
+                                    context.startActivity(this)
+                                }
+                            }*/
+
+                        when (medialModel.fileType) {
+                            MEDIA_TYPE_IMAGE -> {
+                                // go to image viewer; ImageViewerActivity
+                                Intent().apply {
+                                    // putExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
+                                    setClass(context, ImageViewerActivity::class.java)
+                                    context.startActivity(this)
+                                }
+                            }
+                            MEDIA_TYPE_VIDEO -> {
+                                Intent().apply {
+                                    // putExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
+                                    setClass(context, VideoPlayerActivity::class.java)
+                                    context.startActivity(this)
+                                }
+                            }
+                            MEDIA_TYPE_AUDIO -> {
+                                Intent().apply {
+                                    // putExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putParcelableArrayListExtra(Constants.MEDIA_LIST_KEY, list)
+                                    putExtra(Constants.MEDIA_SCROLL_KEY, layoutPosition)
+                                    setClass(context, AudioPlayerActivity::class.java)
+                                    context.startActivity(this)
+                                }
+                            }
                     }
 
                 }
